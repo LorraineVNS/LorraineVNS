@@ -1,0 +1,60 @@
+import 'dart:io';
+
+void main() {
+  List<String> inventory = ["apple", "banana", "carrot", "dates"];
+
+  while (true) {
+    print("\nPlease select an operation to do:");
+    print("[1] Add New Product in the inventory");
+    print("[2] Remove a Product from the inventory");
+    print("[3] Display the total number of items in the inventory");
+    print("[4] Allow the user to search for an item and display if it is available or not.");
+    print("[5] Sort the inventory list alphabetically");
+    print("[6] Exit");
+
+    stdout.write("You have selected: ");
+    String choice = stdin.readLineSync();
+
+    switch (choice) {
+      case '1':
+        stdout.write("Please enter the product you want to add on the list: ");
+        String newProduct = stdin.readLineSync();
+        inventory.add(newProduct);
+        print("\nThe updated product list are as follows: ${inventory.join(', ')}");
+        break;
+
+      case '2':
+        stdout.write("Please enter the product you want to remove from the list: ");
+        String removeProduct = stdin.readLineSync();
+        inventory.remove(removeProduct);
+        print("\nThe updated product list are as follows: ${inventory.join(', ')}");
+        break;
+
+      case '3':
+        print("\nThe total number of items in the inventory is: ${inventory.length}");
+        break;
+
+      case '4':
+        stdout.write("Enter the item you want to search for: ");
+        String searchItem = stdin.readLineSync();
+        if (inventory.contains(searchItem)) {
+          print("Yes, $searchItem is available in the inventory.");
+        } else {
+          print("No, $searchItem is not available in the inventory.");
+        }
+        break;
+
+      case '5':
+        inventory.sort();
+        print("\nThe inventory list sorted alphabetically: ${inventory.join(', ')}");
+        break;
+
+      case '6':
+        print("Exiting program...");
+        return;
+
+      default:
+        print("Invalid choice, please try again.");
+    }
+  }
+}
