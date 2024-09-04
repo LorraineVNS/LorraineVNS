@@ -78,3 +78,20 @@ return inventory.contains(product);
 }
 void sortInventory(List<String> inventory)
 Inventory.sort(); print("Sorted inventory: $inventory");
+old removeProduct(List<String>inventory, String product) inventory.remove(removeProduct); print("Updated inventory after removal: Sinventory");
+else{ print("SremoveProduct not found in the inventory");
+}
+}
+int getTotalItems(List<String>inventory)
+{
+}
+return inventory.length;
+bool isProductAvailable(List<String>inventory, String product)
+{
+return inventory.contains(product);
+}
+void sortInventory(List<String> inventory)
+{
+inventory.sort();
+print("Sorted inventory: $inventory");
+}
